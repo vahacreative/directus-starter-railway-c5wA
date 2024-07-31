@@ -6,7 +6,7 @@
     "start": "npx directus bootstrap && npx directus start"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.17.0"
   },
   "dependencies": {
     "directus": "10.13.1",

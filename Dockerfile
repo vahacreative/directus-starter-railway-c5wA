@@ -1,4 +1,4 @@
-FROM node:16-bullseye
+FROM node:18-bullseye
 
 # Install Python and other necessary tools
 RUN apt-get update && apt-get install -y python3 python3-pip build-essential
