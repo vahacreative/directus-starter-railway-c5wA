@@ -6,18 +6,18 @@ RUN apt-get update && apt-get install -y python3 python3-pip build-essential
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package.json
+COPY package.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
 
 # Set environment variables
-ENV NODE_ENV production
-ENV PYTHON /usr/bin/python3
+ENV NODE_ENV=production
+ENV PYTHON=/usr/bin/python3
 
 # Start the application
 CMD ["npm", "start"]
