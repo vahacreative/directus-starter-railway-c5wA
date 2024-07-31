@@ -1,4 +1,9 @@
 [phases.setup]
-  nixPkgs = ['...','python311']
-
+  nixPkgs = ['nodejs', 'npm', 'python311']
   aptPkgs = ['build-essential', 'glibc-source']
+
+[phases.install]
+  cmds = ['npm install']
+
+[start]
+  cmd = 'npm start'
