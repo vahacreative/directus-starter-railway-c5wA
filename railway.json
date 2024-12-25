@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.up.railway.app/railway.schema.json",
+    "build": {
+        "builder": "NIXPACKS",
+        "nixpacksPlan": {
+            "phases": {
+                "setup": {
+                    "nixPkgs": [
+                        "nodejs-18_x",
+                        "gcc",
+                        "gnumake",
+                        "python311Full",
+                        "binutils",
+                        "stdenv.cc.cc.lib"
+                    ],
+                    "aptPkgs": [
+                        "build-essential",
+                        "glibc-source",
+                        "python3-dev",
+                        "g++",
+                        "libc6-dev"
+                    ]
+                }
+            }
+        }
+    },
+    "deploy": {
+        "startCommand": "npx directus bootstrap && npx directus start"
+    }
+}
